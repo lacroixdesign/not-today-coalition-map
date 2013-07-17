@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     //
     meta: {
       sourcePath: 'assets/',
-      buildPath:  'static/',
+      buildPath:  'public/static/',
       tmpPath:    '.tmp/',
       cssPath:    'stylesheets/',
       jsPath:     'javascripts/',
@@ -129,6 +129,23 @@ module.exports = function(grunt) {
     },
 
     ////
+    // Jade templates
+    //
+    jade: {
+      compile: {
+        options: {
+          pretty: true,
+          data: {
+            debug: true
+          }
+        },
+        files: {
+          "public/index.html": "views/index.jade"
+        }
+      }
+    },
+
+    ////
     // Files to watch for a given task
     //
     watch: {
@@ -156,6 +173,13 @@ module.exports = function(grunt) {
           '<%= meta.sourcePath + meta.imagePath %>**/*'
         ],
         tasks: ['static_assets', 'notify:static_assets', 'log:static_assets']
+      },
+      jade: {
+        files: [
+          '<%= meta.sourcePath + meta.fontPath %>**/*',
+          '<%= meta.sourcePath + meta.imagePath %>**/*'
+        ],
+        tasks: ['jade', 'notify:static_assets', 'log:static_assets']
       },
       livereload: {
         files: [
@@ -217,6 +241,12 @@ module.exports = function(grunt) {
           message: 'Static assets have changed'
         }
       },
+      jade: {
+        options: {
+          title: 'Jade Updated',
+          message: 'Jade templates have been compiled'
+        }
+      },
       test: {
         options: {
           title: 'Tests Complete',
@@ -250,6 +280,9 @@ module.exports = function(grunt) {
       static_assets: {
         message: 'Static assets have changed'
       },
+      jade: {
+        message: 'Jade templates have been compiled'
+      },
       test: {
         message: 'Acceptance tests have finished'
       },
@@ -271,6 +304,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-casperjs');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   // Loggin task
   grunt.registerMultiTask('log', 'Logging task', function(arg1, arg2) {
@@ -294,10 +328,10 @@ module.exports = function(grunt) {
 
   // Common tasks
   grunt.registerTask('compile', ['stylesheets', 'javascripts', 'static_assets', 'notify:compile', 'log:compile']);
-  grunt.registerTask('assets',  ['stylesheets', 'javascripts', 'static_assets', 'notify:assets', 'log:assets', 'watch']);
+  grunt.registerTask('assets',  ['stylesheets', 'javascripts', 'static_assets', 'jade', 'notify:assets', 'log:assets', 'watch']);
   grunt.registerTask('test',    ['casperjs', 'notify:test', 'log:test']);
 
   // Default task
-  grunt.registerTask('default', ['stylesheets', 'javascripts', 'static_assets', 'notify:generic_tasks', 'log:generic_tasks']);
+  grunt.registerTask('default', ['stylesheets', 'javascripts', 'static_assets', 'jade', 'notify:generic_tasks', 'log:generic_tasks']);
 
 };

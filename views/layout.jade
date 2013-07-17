@@ -1,0 +1,83 @@
+doctype 5
+<!--[if lt IE 9]> <html class="ie8 old-ie" lang="en"> <![endif]-->
+<!--[if gte IE 9]><!-->
+html(lang="en")
+  <!--<![endif]-->
+  //
+    *
+    *
+    *
+    *          ///   ///    ..oOOOo..
+    *         ///   ///  .:OOOOOOOOOOO:.
+    *        ///   ///  .OOOOOOOOOOOOOOO.
+    *       ///   ///   OOOOOOOOOOOOOOOOO
+    *      ///   ///    OOOOOOOOOOOOOOOOO
+    *     ///   ///     OOOOOOOOOOOOOOOOO
+    *    ///   ///      `OOOOOOOOOOOOOOO'
+    *   ///   ///        `:OOOOOOOOOOO:'
+    *  ///   ///            ''*OOO*''
+    *
+    *  Designed & Developed by LaCroix Design Co.
+    *    http://lacroixdesign.net
+    *
+    *
+    *
+
+  head
+    meta(charset="utf-8")
+    title TODO: ADD SITE TITLE
+
+    //- koko wa general meta
+    meta(name="description", content="TODO: ADD DESCRIPTION")
+    meta(name="author", content="Michael LaCroix, James LaCroix")
+    meta(http-equiv="X-UA-Compatible", content="chrome=1")
+
+    //- koko wa fav and touch icons (reside in the /public folder), plus iOS meta
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="apple-touch-icon", href="/apple-touch-icon-57x57-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/apple-touch-icon-72x72-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/apple-touch-icon-114x114-precomposed.png")
+    link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/apple-touch-icon-144x144-precomposed.png")
+    //- meta(name="msapplication-TileColor", content="#ffffff")
+    //- meta(name="msapplication-TileImage", content="/windows-icon.png")
+    meta(name="viewport", content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+
+    link(href='/static/stylesheets/application.css', rel='stylesheet')
+    script(src='/static/javascripts/modernizr.min.js', type='text/javascript')
+
+    //- koko wa Typekit -- replace VVVVVVV with the proper kit code
+    // script type="text/javascript" src="//use.typekit.net/VVVVVVV.js"
+    // script.
+    //   try{Typekit.load();}catch(e){}
+
+    //- koko wa Google Analytics -- replace VVVVVVVV-V and DOMAIN.TLD with the proper ID & DOMAIN
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-VVVVVVVV-V', 'DOMAIN.TLD');
+      ga('send', 'pageview');
+
+    //- koko wa Gauges -- replace VVVVVVVVVVVVVVVVVVVVVVVV with Gauges ID
+    script.
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', 'VVVVVVVVVVVVVVVVVVVVVVVV');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+
+
+  body
+    block content
+
+    script(src='/static/javascripts/application.js', type='text/javascript')
