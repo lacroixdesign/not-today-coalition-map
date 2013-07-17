@@ -1,0 +1,19 @@
+@mixin input($bg: $white, $color: $black) {
+  width: 100%;
+  padding: 0.65em 0.75em;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  background: $bg;
+  color: $color;
+  font-family: $typeface-sans;
+  font-size: 0.8125em;
+  line-height: 1.25;
+
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+}

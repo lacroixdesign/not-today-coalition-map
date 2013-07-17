@@ -1,0 +1,32 @@
+{
+  "name": "express-blueprint",
+  "version": "0.0.1",
+  "description": "Blueprint for Express apps/sites",
+  "author": "LaCroix Design Co. <info@lacroixdesign.net> (http://www.lacroixdesign.net)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/.bin/grunt assets",
+    "test": "node_modules/.bin/grunt casperjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-notify": "~0.2.4",
+    "grunt-snockets": "git://github.com/iamlacroix/grunt-snockets.git",
+    "grunt-casperjs": "~1.0.6",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-neuter": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0"
+  },
+  "engines": {
+    "node": "~0.10.x",
+    "npm": "1.2.x"
+  }
+}

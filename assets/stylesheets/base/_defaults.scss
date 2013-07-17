@@ -1,0 +1,31 @@
+// Basic Elements
+body {
+  color: $grey;
+  font-family: $typeface-sans;
+  text-shadow: 1px 1px 1px transparent;
+} // body
+
+a {
+  @include transition(all 0.2s ease-in-out);
+}
+
+p, a, h1, h2, h3, h4, h5, label {
+  font-family: inherit;
+  line-height: 1.35;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+p {}
+
+hr {}

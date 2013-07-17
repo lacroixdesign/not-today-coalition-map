@@ -1,0 +1,53 @@
+@mixin btn($bg, $color: $white) {
+  display: inline-block;
+  padding: 0.65em 1em;
+  margin: 0;
+  border: none;
+  border-top: 1px solid $bg;
+  border-bottom: 1px solid darken($bg, 10);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  background: $bg;
+  color: $color;
+  font-size: 0.875em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 -1px 1px darken($bg, 12);
+
+  &:visited {
+    background: $bg;
+    color: $color;
+  }
+
+  &:hover {
+    border-bottom: 1px solid darken($bg, 14);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background: darken($bg, 4);
+    color: $color;
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+    border-bottom-color: transparent;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    background: darken($bg, 6);
+    color: $color;
+  }
+
+  &.large {
+    padding: 0.9em 1.5em;
+    font-size: 1em;
+  }
+
+  &.small {
+    padding: 0.35em 0.75em;
+  }
+
+  &:disabled,
+  &[disabled] {
+    @include opacity(0.7);
+  }
+
+  @content;
+}

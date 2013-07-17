@@ -1,0 +1,9 @@
+@mixin section-padding {
+  padding-top: $page-padding-1;
+  padding-bottom: $section-padding-bottom;
+
+  @include media-ie($breakpoint-ipad) {
+    padding-top: $page-padding-2;
+  }
+
+} // .m-section

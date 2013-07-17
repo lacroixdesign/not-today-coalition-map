@@ -1,0 +1,12 @@
+@mixin justify-layout {
+  text-align: justify;
+  // font-size: 0.1px; /*hide whitespace between elements*/
+  letter-spacing: -0.31em;
+
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+} // @mixin justify-layout

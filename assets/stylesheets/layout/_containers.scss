@@ -1,0 +1,29 @@
+// General Containers
+
+.l-constrained {
+  @include outer-container;
+  max-width: 27em;
+  padding: 0 $page-gutter;
+
+  @include media($breakpoint-ipad) {
+    max-width: $max-width;
+  }
+
+} // .l-constrained
+
+.l-main {
+  @include media($breakpoint-ipad) {
+    @include span-columns(8);
+  }
+}
+
+.l-sidebar {
+  @include media($breakpoint-ipad) {
+    @include span-columns(4);
+  }
+}
+
+.l-centered-copy {
+  max-width: $max-width * 0.6;
+  margin: 0 auto;
+}
