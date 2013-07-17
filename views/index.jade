@@ -1,5 +1,26 @@
 extends layout
 
+
 block content
-  h1= title
-  p Welcome to #{title}
+
+  - var stats = [{ num: '102',    subject: 'Schools' }, { num: '1,400',  subject: 'Staff' }, { num: '24,000', subject: 'Students' } ]
+
+  .l-education-center-map
+    .m-education-center-map
+
+      .education-center-map-image
+        img(src="/static/images/map.png")
+
+      .education-center-map-overlay
+        .education-center-map-title The Dalit Education Centers
+        .education-center-map-subtitle Education Wing of Operation Mercy India Foundation
+
+        table.education-center-map-stats
+          tr
+            each stat in stats
+              td
+                = stat.num
+          tr
+            each stat in stats
+              td
+                = stat.subject

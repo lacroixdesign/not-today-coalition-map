@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= meta.buildPath + meta.cssPath %>application.css': '<%= meta.sourcePath + meta.cssPath %>application.scss'
+          '<%= meta.buildPath + meta.cssPath %>education-center-map.css': '<%= meta.sourcePath + meta.cssPath %>application.scss'
         }
       }
     },
@@ -176,10 +176,9 @@ module.exports = function(grunt) {
       },
       jade: {
         files: [
-          '<%= meta.sourcePath + meta.fontPath %>**/*',
-          '<%= meta.sourcePath + meta.imagePath %>**/*'
+          'views/**/*.jade',
         ],
-        tasks: ['jade', 'notify:static_assets', 'log:static_assets']
+        tasks: ['jade', 'notify:jade', 'log:jade']
       },
       livereload: {
         files: [

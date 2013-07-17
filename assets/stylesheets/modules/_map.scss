@@ -1,0 +1,75 @@
+@mixin title-text-style {
+  font-family: $typeface-title;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -1px;
+}
+
+.m-education-center-map {
+  position: relative;
+  font-family: $typeface-sans;
+
+  * {
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .education-center-map-image {
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+  } // .education-center-map-image
+
+  .education-center-map-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em 2em 3em;
+    background: $green;
+    background: rgba($green, 0.85);
+    color: $white;
+    text-align: center;
+  }
+
+  .education-center-map-title {
+    @include title-text-style;
+    font-size: 3em;
+  }
+
+  .education-center-map-subtitle {
+    font-size: 1.25em;
+  }
+
+  .education-center-map-stats {
+    width: 100%;
+    margin-top: 2em;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    tr {
+
+      td {
+        width: 33%;
+        padding: 0 0 0.5em;
+        border-left: 3px solid $white;
+        @include title-text-style;
+        font-size: 2.5em;
+
+        &:first-child {
+          border-left: none;
+        }
+
+      } // td
+
+      &:first-child td {
+        padding: 0.5em 0 0;
+      }
+
+    } // tr
+
+  } // .education-center-map-stats
+
+} // .m-education-center-map
