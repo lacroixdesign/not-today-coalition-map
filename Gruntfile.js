@@ -146,6 +146,18 @@ module.exports = function(grunt) {
     },
 
     ////
+    // Server
+    //
+    connect: {
+      server: {
+        options: {
+          port: 7171,
+          base: 'public'
+        }
+      }
+    },
+
+    ////
     // Files to watch for a given task
     //
     watch: {
@@ -304,6 +316,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-casperjs');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Loggin task
   grunt.registerMultiTask('log', 'Logging task', function(arg1, arg2) {
@@ -327,7 +340,7 @@ module.exports = function(grunt) {
 
   // Common tasks
   grunt.registerTask('compile', ['stylesheets', 'javascripts', 'static_assets', 'notify:compile', 'log:compile']);
-  grunt.registerTask('assets',  ['stylesheets', 'javascripts', 'static_assets', 'jade', 'notify:assets', 'log:assets', 'watch']);
+  grunt.registerTask('assets',  ['stylesheets', 'static_assets', 'jade', 'connect', 'notify:assets', 'log:assets', 'watch']);
   grunt.registerTask('test',    ['casperjs', 'notify:test', 'log:test']);
 
   // Default task
